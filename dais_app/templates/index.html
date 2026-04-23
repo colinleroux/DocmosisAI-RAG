@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DaiS Chat</title>
+  {% if use_vite_dev %}
+  <script type="module" src="{{ vite_dev_server }}/@vite/client"></script>
+  <script type="module" src="{{ vite_dev_server }}/src/main.js"></script>
+  {% else %}
+  <link rel="stylesheet" href="{{ url_for('static', filename=app_css) }}" />
+  <script type="module" src="{{ url_for('static', filename=app_js) }}"></script>
+  {% endif %}
+</head>
+<body class="bg-slate-950 text-slate-100">
+  <div id="app"></div>
+</body>
+</html>
